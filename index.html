@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Adaptive Web Components</title>
+    <!-- Basic styles: -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/vendor/prism/prism.css">
+    <!-- Dependencies: -->
+    <script src="assets/vendor/handlebars/handlebars.min.js" charset="utf-8"></script>
+    <!-- Core classes: -->
+    <script src="lib/Component.js"></script>
+    <script src="lib/Components.js"></script>
+    <!-- Web components: -->
+    <link rel="import" data-tag="awc-box" href="comps/awc-box.html">
+  </head>
+
+  <body>
+    <main>
+      <div class="examples">
+        <h2>Adaptive Web Components</h2>
+        <div class="example">
+          <h3>awc-box</h3>
+          <p>New HTML tag:</p>
+          <pre><code class="language-markup">
+            &lt;awc-box>&lt;/awc-box>
+          </code></pre>
+          <p>Template content:</p>
+          <pre><code class="language-markup">
+            &lt;section class="{{ contrast }} {{ reading_direction }}">
+              &lt;p>Hello {{ name }}&lt;/p>
+            &lt;/section>
+          </code></pre>
+          <div class="element">
+            <p>First instance:</p>
+            <awc-box></awc-box>
+            <p>Second instance:</p>
+            <awc-box></awc-box>
+          </div>
+        </div>
+      </div>
+      <div class="events">
+        <h2>Events</h2>
+        <div class="event">
+          <pre><code class="language-js" data-js="Components.updateAll({ name: 'Anna' });">
+            Components.updateAll({
+              name: 'Anna'
+            });
+          </code></pre>
+          <button id="update_name">Update</button>
+        </div>
+        <div class="event">
+          <pre><code class="language-js" data-js="Components.updateAll({ name: 'Darius', contrast: 'invert', reading_direction: 'rtl' });">
+            Components.updateAll({
+              name: 'Darius',
+              contrast: 'invert',
+              reading_direction: 'rtl'
+            });
+          </code></pre>
+          <button id="update_name2">Update</button>
+        </div>
+        <div class="event">
+          <pre><code class="language-js" data-js="Components.update('awc-box', { name: 'Bob', reading_direction: 'ltr' });">
+            Components.update('awc-box', {
+              name: 'Bob',
+              reading_direction: 'ltr'
+            });
+          </code></pre>
+          <button id="update_name3">Update</button>
+        </div>
+      </div>
+    </main>
+    <script src="assets/vendor/prism/prism.js" charset="utf-8"></script>
+    <script src="assets/js/main.js" charset="utf-8"></script>
+  </body>
+
+</html>

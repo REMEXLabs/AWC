@@ -1,0 +1,37 @@
+<template>
+  <style>
+    :host {
+      contain: content;
+    }
+
+    section {
+      display: inline-block;
+      background: #f5f2f0;
+      color: black;
+      padding: 0.5em 1em;
+      width: 200px;
+      text-align: left;
+    }
+
+    .invert {
+      background: black;
+      color: white;
+    }
+
+    .ltr {
+      text-align: left;
+    }
+
+    .rtl {
+      text-align: right;
+    }
+
+  </style>
+  <section class="{{ contrast }} {{ reading_direction }}">
+    <p>Hello {{ name }}</p>
+  </section>
+</template>
+<script>
+  new Component('awc-box', HTMLElement);
+
+</script>
