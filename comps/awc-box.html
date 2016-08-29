@@ -32,6 +32,13 @@
   </section>
 </template>
 <script>
-  new Component('awc-box', HTMLElement);
+  new Component('awc-box', HTMLElement, {
+    'name': 'Gottfried'
+  }, {
+    onAdaptiveChange: function() {
+      console.log('onAdaptiveChange');
+      console.log(this);
+    }
+  });
 
 </script>
