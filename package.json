@@ -1,0 +1,35 @@
+{
+  "name": "awc",
+  "version": "1.0.0",
+  "description": "Framework for the implementation of adpative user interface components.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/REMEXLabs/AWC.git"
+  },
+  "keywords": [
+    "web",
+    "components",
+    "adaptivity"
+  ],
+  "author": "Darius Morawiec",
+  "contributors": [
+    "Alexander Henka <henka@hdm-stuttgart.de>",
+    "Daniel Ziegler <daniel.ziegler@iao.fraunhofer.de>",
+    "Darius Morawiec <morawiec@hdm-stuttgart.de>"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/REMEXLabs/AWC/issues"
+  },
+  "homepage": "https://github.com/REMEXLabs/AWC#readme",
+  "devDependencies": {
+    "express": "^4.14.0"
+  }
+}
