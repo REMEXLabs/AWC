@@ -10,8 +10,8 @@
     <!-- Dependencies: -->
     <script src="assets/vendor/handlebars/handlebars.min.js" charset="utf-8"></script>
     <!-- Core classes: -->
-    <script src="lib/Component.js"></script>
-    <script src="lib/Components.js"></script>
+    <script src="src/Component.js"></script>
+    <script src="src/Components.js"></script>
     <!-- Web components: -->
     <link rel="import" data-tag="awc-box" href="comps/awc-box.html">
   </head>
@@ -35,7 +35,7 @@
           <p>Initial model:</p>
           <pre><code class="language-markup">
             {
-              name: 'Gottfried'
+              name: 'Peter'
             }
           </code></pre>
           <div class="element">
@@ -54,7 +54,7 @@
               name: 'Anna'
             });
           </code></pre>
-          <button id="update_name">Update</button>
+          <button>Update</button>
         </div>
         <div class="event">
           <pre><code class="language-js" data-js="Components.updateAll({ name: 'Darius', contrast: 'invert', reading_direction: 'rtl' });">
@@ -64,7 +64,7 @@
               reading_direction: 'rtl'
             });
           </code></pre>
-          <button id="update_name2">Update</button>
+          <button>Update</button>
         </div>
         <div class="event">
           <pre><code class="language-js" data-js="Components.update('awc-box', { name: 'Bob', reading_direction: 'ltr' });">
@@ -73,7 +73,7 @@
               reading_direction: 'ltr'
             });
           </code></pre>
-          <button id="update_name3">Update</button>
+          <button>Update</button>
         </div>
       </div>
     </main>
