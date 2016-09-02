@@ -12,3 +12,11 @@
 
   });
 })(window, document, Component, Components);
+
+$(function () {
+  $('#sidebar').affix({
+    offset: {
+      top: 393
+    }
+  });
+});

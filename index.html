@@ -4,79 +4,250 @@
   <head>
     <meta charset="utf-8">
     <title>Adaptive Web Components</title>
-    <!-- Basic styles: -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Basic website: -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/vendor/normalize/normalize.css">
     <link rel="stylesheet" href="assets/vendor/prism/prism.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- Dependencies: -->
     <script src="assets/vendor/handlebars/handlebars.min.js" charset="utf-8"></script>
     <!-- Core classes: -->
-    <script src="src/Component.js"></script>
-    <script src="src/Components.js"></script>
+    <script src="src/Darwin.js"></script>
     <!-- Web components: -->
     <link rel="import" data-tag="awc-box" href="comps/awc-box.html">
   </head>
 
-  <body>
-    <main>
-      <div class="examples">
-        <h2>Adaptive Web Components</h2>
-        <div class="example">
-          <h3>awc-box</h3>
-          <p>New HTML tag:</p>
-          <pre><code class="language-markup">
-            &lt;awc-box>&lt;/awc-box>
-          </code></pre>
-          <p>Template content:</p>
-          <pre><code class="language-markup">
-            &lt;section class="{{ contrast }} {{ reading_direction }}">
-              &lt;p>Hello {{ name }}&lt;/p>
-            &lt;/section>
-          </code></pre>
-          <p>Initial model:</p>
-          <pre><code class="language-markup">
-            {
-              name: 'Peter'
-            }
-          </code></pre>
-          <div class="element">
-            <p>First instance:</p>
-            <awc-box></awc-box>
-            <p>Second instance:</p>
-            <awc-box></awc-box>
-          </div>
+  <body data-spy="scroll" data-target="#scrollspy" data-offset="50">
+
+    <!-- top navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <span class="navbar-brand">Darwin.js</span>
         </div>
       </div>
-      <div class="events">
-        <h2>Events</h2>
-        <div class="event">
-          <pre><code class="language-js" data-js="Components.updateAll({ name: 'Anna' });">
-            Components.updateAll({
-              name: 'Anna'
-            });
-          </code></pre>
-          <button>Update</button>
-        </div>
-        <div class="event">
-          <pre><code class="language-js" data-js="Components.updateAll({ name: 'Darius', contrast: 'invert', reading_direction: 'rtl' });">
-            Components.updateAll({
-              name: 'Darius',
-              contrast: 'invert',
-              reading_direction: 'rtl'
-            });
-          </code></pre>
-          <button>Update</button>
-        </div>
-        <div class="event">
-          <pre><code class="language-js" data-js="Components.update('awc-box', { name: 'Bob', reading_direction: 'ltr' });">
-            Components.update('awc-box', {
-              name: 'Bob',
-              reading_direction: 'ltr'
-            });
-          </code></pre>
-          <button>Update</button>
-        </div>
+    </nav>
+    <!-- /top navigation -->
+
+    <!-- header -->
+    <header class="jumbotron">
+      <div class="container">
+        <h1>Adaptive Web Components</h1>
+        <p>Use adaptive user interfaces today by creating and using predefined Web Components.</p>
+        <p>
+          <a class="btn btn-primary btn-lg" href="#usage" role="button">Getting Started</a>
+          <a class="btn btn-primary btn-lg" href="lib/darwin.js" role="button" download>Download Darwin.js</a>
+        </p>
       </div>
-    </main>
+    </header>
+    <!-- header -->
+
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+
+        <!-- aside -->
+        <aside class="col-xs-6 col-sm-2 sidebar-offcanvas" id="scrollspy" role="complementary">
+          <nav id="sidebar" role="navigation">
+            <h3>Navigation</h3>
+            <ul class="nav nav-sidebar">
+              <li><a href="#introduction">Introduction</a></li>
+              <li><a href="#examples">Examples</a></li>
+              <li><a href="#usage">Usage</a></li>
+              <li><a href="#downloads">Downloads</a></li>
+              <li><a href="#requirements">Requirements</a></li>
+              <li><a href="#browser_support">Browser Support</a></li>
+              <li><a href="#build_process">Build Process</a></li>
+              <li><a href="#funding">Funding Acknowledgement</a></li>
+              <li><a href="#license">License</a></li>
+            </ul>
+          </nav>
+        </aside>
+        <!-- /aside -->
+
+        <!-- main -->
+        <main class="col-xs-12 col-sm-10 main" role="main">
+
+          <!-- section: introduction -->
+          <section class="section" id="introduction">
+            <h2 class="sub-header">Introduction</h2>
+            <p>...</p>
+          </section>
+          <!-- /section: introduction -->
+
+          <!-- section: examples -->
+          <section class="section" id="examples">
+            <h2 class="sub-header">Examples</h2>
+            <p>...</p>
+          </section>
+          <!-- /section: examples -->
+
+          <!-- section: usage -->
+          <section class="section" id="usage">
+            <h2 class="sub-header">Usage</h2>
+
+            <!-- div.examples -->
+            <div class="examples">
+              <div class="example">
+                <p>New HTML tag:</p>
+                <pre><code class="language-markup">
+                  &lt;awc-box>&lt;/awc-box>
+                </code></pre>
+                <p>Template content:</p>
+                <pre><code class="language-markup">
+                  &lt;section class="{{ contrast }} {{ reading_direction }}">
+                    &lt;p>Hello {{ name }}&lt;/p>
+                  &lt;/section>
+                </code></pre>
+                <p>Initial model:</p>
+                <pre><code class="language-markup">
+                  {
+                    name: 'Peter'
+                  }
+                </code></pre>
+                <div class="element">
+                  <p>First instance:</p>
+                  <awc-box></awc-box>
+                  <p>Second instance:</p>
+                  <awc-box></awc-box>
+                </div>
+              </div>
+            </div>
+            <!-- /div.examples -->
+
+            <!-- div.events -->
+            <div class="events">
+              <p>Update the model and style:</p>
+              <div class="event">
+                <pre><code class="language-js" data-js="Components.updateAll({ name: 'Anna' });">
+                  Components.updateAll({
+                    name: 'Anna'
+                  });
+                </code></pre>
+                <button>Update</button>
+              </div>
+              <div class="event">
+                <pre><code class="language-js" data-js="Components.updateAll({ name: 'Darius', contrast: 'invert', reading_direction: 'rtl' });">
+                  Components.updateAll({
+                    name: 'Darius',
+                    contrast: 'invert',
+                    reading_direction: 'rtl'
+                  });
+                </code></pre>
+                <button>Update</button>
+              </div>
+              <div class="event">
+                <pre><code class="language-js" data-js="Components.update('awc-box', { name: 'Bob', reading_direction: 'ltr' });">
+                  Components.update('awc-box', {
+                    name: 'Bob',
+                    reading_direction: 'ltr'
+                  });
+                </code></pre>
+                <button>Update</button>
+              </div>
+            </div>
+            <!-- div.events -->
+
+          </section>
+          <!-- /section: usage -->
+
+          <!-- section: downloads -->
+          <section class="section section-downloads" id="downloads">
+            <h2 class="sub-header">Download</h2>
+            <p><a class="btn btn-primary btn-lg" href="/lib/Darwin.js" role="button" download>Download Darwin.js</a> <span>or</span> <a class="btn btn-primary btn-lg" href="/src/Darwin.js" role="button" download>Download Darwin.js (transpiled)</a></p>
+          </section>
+          <!-- /section: downloads -->
+
+          <!-- section: requirements -->
+          <section class="section" id="requirements">
+            <h2 class="sub-header">Requirements</h2>
+            <p>The core library is based on Web Components, which is a term of the use of the following noval technologies. The following list shows the different technologies and approaches.</p>
+            <ul>
+              <li><a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element">HTML Templates</a>
+                <p>Method of declaring a portion of reusable markup that is parsed but not rendered until cloned.</p>
+              </li>
+              <li><a href="https://www.w3.org/TR/custom-elements/">Custom Elements</a>
+                <p>Method of defining and using new types of DOM elements in a document.</p>
+              </li>
+              <li><a href="https://www.w3.org/TR/html-imports/">HTML Imports</a>
+                <p>Method of including and reusing HTML documents in other HTML documents.</p>
+              </li>
+              <li><a href="https://www.w3.org/TR/shadow-dom/">Shadow DOM</a>
+                <p>Method of establishing and maintaining functional boundaries between DOM trees and how these trees interact with each other within a document, thus enabling better functional encapsulation within the DOM.</p>
+              </li>
+            </ul>
+          </section>
+          <!-- /section: requirements -->
+
+          <!-- section: browser_support -->
+          <section class="section" id="browser_support">
+            <h2 class="sub-header">Browser Support</h2>
+            <h3>Web Components</h3>
+            <p>The Web Components is the future technology of modern websites. But the implementation of the required features is still under development. So we recommend using the newest stable <a href="https://www.google.de/chrome/">Google Chrome</a> browser.</p>
+            <h3>ECMAScript 6</h3>
+            <p>The library componenets are written in <a href="http://es6-features.org/">ECMAScript 6</a>, which is the highest level of JavaScript today. But in general the browser support of the related new features are limited. Because of that issue we
+              use the JavaScript transpiler <a href="https://babeljs.io/">Babel</a> to enhance the compatibility.</p>
+          </section>
+          <!-- /section: browser_support -->
+
+          <!-- section: build_process -->
+          <section class="section" id="build_process">
+            <h2 class="sub-header">Build Process</h2>
+            <h3>Requirements</h3>
+            <!-- <p>Installation of <a href="http://gruntjs.com/getting-started#installing-the-cli">Grunt</a>:</p>
+              <pre><code class="language-shell">$ npm install -g grunt-cli</code></pre>
+              <p>Installation of <a href="https://bower.io/#install-bower">Bower</a>:</p>
+              <pre><code class="language-shell">$ npm install -g bower</code></pre>
+              <p>Note: The argument <code>-g</code> installs the application globally.</p> -->
+            <h3>Installation</h3>
+            <p>The file package.json lists all necessary dependencies for a build. Execute the following command to install all packages.</p>
+            <pre><code class="language-shell">$ npm install</code></pre>
+            <p>Note: Be patient, the download and installation process takes a moment.</p>
+            <h3>Process</h3>
+            <p>Run the build process by typing:</p>
+            <pre><code class="language-shell">$ gulp build</code></pre>
+            <p>After that you can start a local webserver (<a href="127.0.0.1:3000">127.0.0.1:3000</a>) and try all examples:</p>
+            <pre><code class="language-shell">$ npm start</code></pre>
+            <h3>Browser</h3>
+            <p>Start the <a href="https://www.google.com/chrome/browser/canary.html">Google Canary</a> with following necessary flags:</p>
+            <pre><code class="language-shell">$ &lt;Application> --enable-blink-features=CustomElementsV1,ShadowDOMV1</code></pre>
+          </section>
+          <!-- /section: build_process -->
+
+          <!-- section: funding -->
+          <section class="section" id="funding">
+            <h2 class="sub-header">Funding Acknowledgement</h2>
+            <p>The research leading to these results has received funding from the European Union's Seventh Framework Programme (FP7) under grant agreement No.610510 (<a href="http://www.prosperity4all.eu/">www.prosperity4all.eu</a>).</p>
+          </section>
+          <!-- /section: funding -->
+
+          <!-- section: license -->
+          <section class="section" id="license">
+            <h2 class="sub-header">License</h2>
+            <p>See the <a href="LICENSE.txt">license file</a> or visit <a href="http://www.apache.org/licenses/LICENSE-2.0">www.apache.org/licenses/LICENSE-2.0</a>.</p>
+          </section>
+          <!-- section: license -->
+
+        </main>
+        <!-- /main -->
+
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <p>GitHub: <a href="https://github.com/REMEXLabs/AWC">https://github.com/REMEXLabs/AWC</a></p>
+      </div>
+    </footer>
+    <!-- /footer -->
+
     <script src="assets/vendor/prism/prism.js" charset="utf-8"></script>
     <script src="assets/js/main.js" charset="utf-8"></script>
   </body>
