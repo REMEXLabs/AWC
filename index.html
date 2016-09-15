@@ -43,10 +43,21 @@
         </p>
       </div>
     </header>
-    <!-- header -->
+    <!-- /header -->
 
     <!-- container -->
     <div class="container">
+
+      <div id="alert" class="alert alert-warning col-xs-12 col-sm-12" style="text-align: center;" role="alert">
+        Your browser doesn't support all required Web Components technologies. Please update your browser!
+      </div>
+      <script>
+        if (('customElements' in window && !!HTMLElement.prototype.attachShadow) === true) {
+          document.getElementById('alert').style.display = 'none';
+        }
+
+      </script>
+
       <!-- row -->
       <div class="row">
 
