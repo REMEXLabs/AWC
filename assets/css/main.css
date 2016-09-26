@@ -7,6 +7,10 @@ html, body {
   margin: 0;
 }
 
+header, main, footer, section, aside {
+  display: block;
+}
+
 body {
   position: relative;
   color: #34495e;
@@ -55,7 +59,7 @@ body {
 
 .sub-header {
   padding-bottom: 10px;
-  border-bottom: 1px solid #edeff1;
+  border-bottom: 1px solid #d7dbe0;
 }
 
 
@@ -222,8 +226,8 @@ a:hover, a:focus {
 
 @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
-    padding-left: 40px;
+    /*padding-right: 40px;*/
+    padding-left: 20px;
   }
 }
 
@@ -278,6 +282,7 @@ a:hover, a:focus {
 
 .jumbotron {
   background: #edeff1;
+  border-bottom: 1px solid #d7dbe0;
 }
 
 .jumbotron h1 {
@@ -294,6 +299,59 @@ a:hover, a:focus {
   }
 }
 
+.persona-selection {
+  position: fixed;
+  background: #9b59b6;
+  height: 230px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.persona-selection .persona {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.persona-selection .content {
+  position: relative;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  height: 165px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.persona-selection img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin: 0;
+  margin-left: -50px;
+  border: 2px solid #fff;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  position: absolute;
+  left: 50%;
+  top: 20px;
+}
+
+.persona-selection .data {
+  margin-top: 50px;
+  width: 100%;
+  height: 115px;
+  background: #fff;
+  padding: 58px 0 0 0;
+  text-align: center;
+}
+
+.persona-selection h3 {
+  font-size: 18px;
+  padding: 0;
+  padding-bottom: 10px;
+}
+
 
 /*
  * Footer
@@ -301,9 +359,32 @@ a:hover, a:focus {
 
 footer {
   background: #edeff1;
-  padding-bottom: 40px;
-  padding-top: 30px;
-  margin-top: 30px;
+  line-height: 30px;
+  height: 280px;
+  z-index: 5;
+  border-top: 1px solid #d7dbe0;
+}
+
+footer p {
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+}
+
+footer .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+footer svg {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  top: 5px;
+  fill: #804398;
 }
 
 
