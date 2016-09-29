@@ -7,6 +7,7 @@
     <!-- Basic website: -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/vendor/normalize/normalize.css">
     <link rel="stylesheet" href="assets/vendor/prism/prism.css">
     <link rel="stylesheet" href="assets/css/main.css">
@@ -38,8 +39,8 @@
         <h1>Adaptive Web Components</h1>
         <p>Use adaptive user interfaces today by creating and using predefined Web Components.</p>
         <p>
-          <a class="btn btn-primary btn-lg" href="#usage" role="button">Getting Started</a>
-          <a class="btn btn-primary btn-lg" href="lib/darwin.js" role="button" download>Download Darwin.js</a>
+          <a class="btn btn-primary btn-lg" href="#usage" role="button"><i class="fa fa-book" aria-hidden="true"></i> Getting Started</a>
+          <a class="btn btn-primary btn-lg" href="lib/darwin.js" role="button" download><i class="fa fa-download" aria-hidden="true"></i> Download Darwin.js</a>
         </p>
       </div>
     </header>
@@ -86,9 +87,9 @@
           <!-- section: introduction -->
           <section class="section" id="introduction">
             <h2 class="sub-header">Introduction</h2>
-            <p>Web Components are a set of features currently being added by the W3C to the HTML and DOM specifications that allow for the creation of reusable widgets or components in web documents and web applications. The intention behind them is to bring
-              component-based software engineering to the World Wide Web. In this research project we add the ability to use adaptive Web Components, which consider the need and preference set of a user to improve the accessibility, usability and user
-              experience.
+            <p>Web Components are a set of features currently being added by the <strong>W3C</strong> to the HTML and DOM specifications that allow for the creation of reusable widgets or components in web documents and web applications. The intention behind
+              them is to bring component-based software engineering to the World Wide Web. In this research project we add the ability to use <strong>adaptive</strong> components, which consider the need and preference set of a user to improve the accessibility,
+              usability and user experience.
             </p>
           </section>
           <!-- /section: introduction -->
@@ -96,7 +97,10 @@
           <!-- section: examples -->
           <section class="section" id="examples">
             <h2 class="sub-header">Examples</h2>
-            <p>...</p>
+            <div class="element">
+              <p>Adaptive Text Box (<code class="language-markup">&lt;awc-box></code>):</p>
+              <awc-box>
+            </div>
           </section>
           <!-- /section: examples -->
 
@@ -109,7 +113,7 @@
               <div class="example">
                 <p>New HTML tag:</p>
                 <pre><code class="language-markup">
-                  &lt;awc-box>&lt;/awc-box>
+                  &lt;awc-box>
                 </code></pre>
                 <p>Template content:</p>
                 <pre><code class="language-markup">
@@ -123,20 +127,14 @@
                     name: 'Peter'
                   }
                 </code></pre>
-                <div class="element">
-                  <p>First instance:</p>
-                  <awc-box></awc-box>
-                  <p>Second instance:</p>
-                  <awc-box></awc-box>
-                </div>
               </div>
             </div>
             <!-- /div.examples -->
 
             <!-- div.events -->
             <div class="events">
-              <p>Update the model and style:</p>
               <div class="event">
+                <p>Update the model and style:</p>
                 <pre><code class="language-js" data-js="Components.updateAll({ name: 'Anna' });">
                   Components.updateAll({
                     name: 'Anna'
@@ -145,19 +143,19 @@
                 <button>Update</button>
               </div>
               <div class="event">
-                <pre><code class="language-js" data-js="Components.updateAll({ name: 'Darius', contrast: 'invert', reading_direction: 'rtl' });">
+                <pre><code class="language-js" data-js="Components.updateAll({ name: 'Tom', reading_direction: 'rtl' });">
                   Components.updateAll({
-                    name: 'Darius',
-                    contrast: 'invert',
+                    name: 'Tom',
                     reading_direction: 'rtl'
                   });
                 </code></pre>
                 <button>Update</button>
               </div>
               <div class="event">
-                <pre><code class="language-js" data-js="Components.update('awc-box', { name: 'Bob', reading_direction: 'ltr' });">
+                <pre><code class="language-js" data-js="Components.update('awc-box', { name: 'Carol', contrast: 'invert', reading_direction: 'ltr' });">
                   Components.update('awc-box', {
-                    name: 'Bob',
+                    name: 'Carol',
+                    contrast: 'invert',
                     reading_direction: 'ltr'
                   });
                 </code></pre>
@@ -172,7 +170,9 @@
           <!-- section: downloads -->
           <section class="section section-downloads" id="downloads">
             <h2 class="sub-header">Download</h2>
-            <p><a class="btn btn-primary btn-lg" href="/src/Darwin.js" role="button" download>Download Darwin.js</a> <span>or</span> <a class="btn btn-primary btn-lg" href="/lib/Darwin.js" role="button" download>Download Darwin.js (transpiled)</a></p>
+            <p><a class="btn btn-primary btn-lg" href="/src/Darwin.js" role="button" download><i class="fa fa-download" aria-hidden="true"></i> Download Darwin.js</a> <span>or</span>
+              <a class="btn btn-primary btn-lg" href="/lib/Darwin.js" role="button" download><i class="fa fa-download" aria-hidden="true"></i> Download Darwin.js (transpiled)</a>
+            </p>
           </section>
           <!-- /section: downloads -->
 
@@ -258,37 +258,64 @@
     <div class="persona-selection">
       <div class="container">
         <section class="personas">
+          <div class="description">
+            Select one of the listed personas to adapt the required need and preference set on all integrated adaptive components:
+          </div>
           <div class="row">
-            <!-- https://randomuser.me/ -->
+            <!-- http://personabrowser.gpii.eu/ -->
             <div class="persona col-sm-4 col-xs-4">
-              <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Joshua Alexander' });">
-                <div class="content">
-                  <img src="assets/img/joshua.jpg" alt="Joshua Alexander">
-                  <div class="data">
-                    <h3>Joshua Alexander</h3>
-                  </div>
+              <div class="content">
+                <img src="assets/img/anna.png" alt="Anna">
+                <div class="data">
+                  <h3>Anna</h3>
+                  <nav>
+                    <ul>
+                      <li>
+                        <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Anna' });" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Adapt Set</a>
+                      </li>
+                      <li>
+                        <a href="http://personabrowser.gpii.eu/en/Persona/english-anna/" target="_carole" class="btn btn-primary btn-sm"><i class="fa fa-external-link" aria-hidden="true"></i> Open Details</a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
-              </a>
+              </div>
             </div>
             <div class="persona col-sm-4 col-xs-4">
-              <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Evan Graham' });">
-                <div class="content">
-                  <img src="assets/img/evan.jpg" alt="Evan Graham">
-                  <div class="data">
-                    <h3>Evan Graham</h3>
-                  </div>
+              <div class="content">
+                <img src="assets/img/tom.png" alt="Tom">
+                <div class="data">
+                  <h3>Tom</h3>
+                  <nav>
+                    <ul>
+                      <li>
+                        <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Tom' });" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Adapt Set</a>
+                      </li>
+                      <li>
+                        <a href="http://personabrowser.gpii.eu/en/Persona/english-anna/" target="_carole" class="btn btn-primary btn-sm"><i class="fa fa-external-link" aria-hidden="true"></i> Open Details</a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
-              </a>
+              </div>
             </div>
             <div class="persona col-sm-4 col-xs-4">
-              <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Harper Ramirez' });">
-                <div class="content">
-                  <img src="assets/img/harper.jpg" alt="Harper Ramirez">
-                  <div class="data">
-                    <h3>Harper Ramirez</h3>
-                  </div>
+              <div class="content">
+                <img src="assets/img/carol.png" alt="Carol">
+                <div class="data">
+                  <h3>Carol</h3>
+                  <nav>
+                    <ul>
+                      <li>
+                        <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Carol' });" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Adapt Set</a>
+                      </li>
+                      <li>
+                        <a href="http://personabrowser.gpii.eu/en/Persona/english-carole/" target="_carole" class="btn btn-primary btn-sm"><i class="fa fa-external-link" aria-hidden="true"></i> Open Details</a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </section>

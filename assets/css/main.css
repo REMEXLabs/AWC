@@ -16,27 +16,35 @@ body {
   color: #34495e;
 }
 
+.fa {
+  margin-right: 3px;
+}
+
 .examples, .events {}
 
 .events {
-  padding-top: 15px;
+  /*padding-top: 15px;*/
 }
 
-.example, .event {}
+.event {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
 
-.example p {
+.event p, .example p {
   margin-top: 20px;
 }
 
 .event button {
   width: 100%;
-  height: 30px;
-  margin-bottom: 10px;
+  height: 40px;
   background-color: #c9d4e8;
   color: #5d7dba;
   border: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 
@@ -91,12 +99,12 @@ body {
 }
 
 .btn-primary {
-  background: #5d7dba;
+  background: #5cb85c;
   border: 0;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:hover, .btn-primary:active:focus {
-  background: #3d5a8f;
+  background: #449d44;
 }
 
 
@@ -302,7 +310,7 @@ a:hover, a:focus {
 .persona-selection {
   position: fixed;
   background: #5d7dba;
-  height: 230px;
+  /*height: 300px;*/
   width: 100%;
   left: 0;
   bottom: 0;
@@ -310,50 +318,77 @@ a:hover, a:focus {
   overflow: hidden;
 }
 
+.persona-selection .description {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .persona-selection .persona {
-  margin-top: 30px;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .persona-selection .content {
   position: relative;
   background: #fff;
   background: rgba(255, 255, 255, 0.2);
-  height: 165px;
+  /*height: 250px;*/
   border-radius: 6px;
   overflow: hidden;
 }
 
 .persona-selection img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+  background: #5d7dba;
+  color: #fff;
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
   margin: 0;
-  margin-left: -50px;
+  margin-left: -45px;
   border: 2px solid #fff;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
   position: absolute;
   left: 50%;
-  top: 20px;
+  top: 15px;
+}
+
+.persona-selection ul {
+  margin: 0;
+  padding: 0;
+}
+
+.persona-selection li {
+  display: inline;
+}
+
+.persona-selection li .btn {
+  margin-bottom: 5px;
+  margin-right: 2.5px;
+}
+
+.persona-selection li:last-child .btn {
+  margin-left: 2.5px;
 }
 
 .persona-selection .data {
   margin-top: 50px;
   width: 100%;
-  height: 115px;
   background: rgba(255, 255, 255, 0.8);
-  padding: 58px 0 0 0;
+  padding: 43px 0 7px 0;
   text-align: center;
 }
 
-.persona-selection .content:hover .data {
+
+/*.persona-selection .content:hover .data {
   background: #fff;
-}
+}*/
 
 .persona-selection h3 {
   font-size: 18px;
   padding: 0;
-  padding-bottom: 10px;
 }
 
 
@@ -363,15 +398,14 @@ a:hover, a:focus {
 
 footer {
   background: #edeff1;
-  line-height: 30px;
-  height: 280px;
+  height: 330px;
   z-index: 5;
   border-top: 1px solid #d7dbe0;
 }
 
 footer p {
-  height: 50px;
-  line-height: 50px;
+  height: 68px;
+  line-height: 68px;
   margin: 0;
 }
 
@@ -399,9 +433,15 @@ footer svg {
 pre[class*="language-"] {
   background: #edeff1;
   border: 0;
-  border-radius: 0;
+  border-radius: 5px;
   /*margin-bottom: 0;*/
-  margin-top: 10px;
+  /*margin-top: 10px;*/
+  margin-top: 0;
+}
+
+.event pre[class*="language-"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 pre[class*="language-js"] {
