@@ -1,0 +1,65 @@
+<template>
+  <style>
+    :host {
+      contain: content;
+    }
+    div {
+      display: inline-block;
+      background: white;
+      color: black;
+      padding: 0.5em 1em;
+      width: 320px;
+      text-align: left;
+      border: 1px solid black;
+    }
+    .contrast_, .contrast_normal {
+      background: white;
+      color: black;
+    }
+    .contrast_high {
+      background: black;
+      color: white;
+    }
+    .reading_direction_, .reading_direction_ltr {
+      text-align: left;
+      float: left;
+    }
+    .reading_direction_rtl {
+      text-align: right;
+      float: right;
+    }
+    .size_, .size_normal {
+      font-size: 12px;
+      letter-spacing: 0px;
+    }
+    .size_small {
+      font-size: 9px;
+      letter-spacing: 0px;
+    }
+    .size_large {
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+  </style>
+  <div class="contrast_{{ contrast }} reading_direction_{{ reading_direction }} size_{{ size }}">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+    <p>When an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+  </div>
+</template>
+<script>
+  new Component('awc-textbox', HTMLElement,
+    // Model:
+    {
+      'contrast': 'normal',
+      'reading_direction': 'ltr',
+      'size': 'normal'
+    },
+    // Behaviour:
+    {
+      onAdaptiveChange: function() {
+        console.log('onAdaptiveChange');
+        console.log(this);
+      }
+    });
+</script>

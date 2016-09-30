@@ -32,7 +32,15 @@ body {
 }
 
 .event p, .example p {
-  margin-top: 20px;
+  margin-top: 15px;
+}
+
+.element {
+  padding: 0 0 15px;
+}
+
+.element p.subline {
+  margin-top: 12px;
 }
 
 .event button {
@@ -371,6 +379,7 @@ a:hover, a:focus {
 
 .persona-selection li:last-child .btn {
   margin-left: 2.5px;
+  margin-right: 0;
 }
 
 .persona-selection .data {

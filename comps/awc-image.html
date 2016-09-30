@@ -1,0 +1,60 @@
+<template>
+  <style>
+    :host {
+      contain: content;
+    }
+    img {
+      border: 1px solid #000;
+      padding: 0px;
+      float: left;
+    }
+    .contrast_, .contrast_normal {
+      -webkit-filter: none;
+      filter: none;
+      background: #fff;
+    }
+    .contrast_high {
+      -webkit-filter: grayscale(100%) contrast(130%);
+      filter: grayscale(100%) contrast(130%);
+      background: #000;
+    }
+    .reading_direction_, .reading_direction_ltr {
+      float: left;
+    }
+    .reading_direction_rtl {
+      float: right;
+    }
+    .size_, .size_normal {
+      width: 160px;
+      border-width: 1px;
+    }
+    .size_large {
+      width: 320px;
+      border-width: 3px;
+    }
+    .size_small {
+      width: 80px;
+      border-width: 1px;
+    }
+    strong {
+      font-weight: bold;
+    }
+  </style>
+  <img class="contrast_{{ contrast }} reading_direction_{{ reading_direction }} size_{{ size }}" src="/assets/img/carole.png" alt="Carole">
+</template>
+<script>
+  new Component('awc-image', HTMLElement,
+    // Model:
+    {
+      'contrast': 'normal',
+      'size': 'normal',
+      'reading_direction': 'ltr'
+    },
+    // Behaviour:
+    {
+      onAdaptiveChange: function() {
+        console.log('onAdaptiveChange');
+        console.log(this);
+      }
+    });
+</script>

@@ -18,7 +18,9 @@
     <!-- Core classes: -->
     <script src="src/Darwin.js"></script>
     <!-- Web components: -->
-    <link rel="import" data-tag="awc-box" href="comps/awc-box.html">
+    <link rel="import" data-tag="awc-profile" href="comps/awc-profile.html">
+    <link rel="import" data-tag="awc-textbox" href="comps/awc-textbox.html">
+    <link rel="import" data-tag="awc-image" href="comps/awc-image.html">
   </head>
 
   <body data-spy="scroll" data-target="#scrollspy" data-offset="50">
@@ -56,7 +58,6 @@
         if (('customElements' in window && !!HTMLElement.prototype.attachShadow) === true) {
           document.getElementById('alert').style.display = 'none';
         }
-
       </script>
 
       <!-- row -->
@@ -97,10 +98,40 @@
           <!-- section: examples -->
           <section class="section" id="examples">
             <h2 class="sub-header">Examples</h2>
+
             <div class="element">
-              <p>Adaptive Text Box (<code class="language-markup">&lt;awc-box></code>):</p>
-              <awc-box>
+              <h3>Adaptive Profile</h3>
+              <p>The style and content of web components can be changed adaptively.</p>
+              <p class="subline"><strong>Component</strong>: <a href="https://github.com/REMEXLabs/AWC/blob/master/comps/awc-profile.html">awc-profile.html</a></p>
+              <pre><code class="language-markup">&lt;figure>
+  &lt;img src="/assets/img/{{ filename }}.png" alt="{{ name }}">
+  &lt;figcaption>Hello, I'm &lt;strong>{{ name }}&lt;/strong>.&lt;/figcaption>
+&lt;/figure></code></pre>
+              <pre><code class="language-markup">&lt;awc-profile></code></pre>
+              <p class="subline"><strong>Result</strong>:</p>
+              <awc-profile>
             </div>
+
+            <div class="element">
+              <h3>Adaptive Textbox</h3>
+              <p class="subline"><strong>Component</strong>: <a href="https://github.com/REMEXLabs/AWC/blob/master/comps/awc-textbox.html">awc-tetxbox.html</a></p>
+              <pre><code class="language-markup">&lt;div class="contrast_{{ contrast }} reading_direction_{{ reading_direction }} size_{{ size }}">
+  &lt;p>Multiple paragraphs.&lt;/p>
+&lt;/div></code></pre>
+              <pre><code class="language-markup">&lt;awc-textbox></code></pre>
+              <p class="subline"><strong>Result</strong>:</p>
+              <awc-textbox>
+            </div>
+
+            <div class="element">
+              <h3>Adaptive Image</h3>
+              <p class="subline"><strong>Component</strong>: <a href="https://github.com/REMEXLabs/AWC/blob/master/comps/awc-image.html">awc-image.html</a></p>
+              <pre><code class="language-markup">&lt;img class="contrast_{{ contrast }} size_{{ size }}" src="/assets/img/carole.png" alt="Carole"></code></pre>
+              <pre><code class="language-markup">&lt;awc-image></code></pre>
+              <p class="subline"><strong>Result</strong>:</p>
+              <awc-image>
+            </div>
+
           </section>
           <!-- /section: examples -->
 
@@ -111,61 +142,90 @@
             <!-- div.examples -->
             <div class="examples">
               <div class="example">
-                <p>New HTML tag:</p>
+                <p>Define and register a new HTML element as tag. You have to use the namespace 'awc' to use the library:</p>
                 <pre><code class="language-markup">
                   &lt;awc-box>
                 </code></pre>
-                <p>Template content:</p>
+                <p>After that you create a template with HTML markup and a style:</p>
                 <pre><code class="language-markup">
                   &lt;section class="{{ contrast }} {{ reading_direction }}">
                     &lt;p>Hello {{ name }}&lt;/p>
                   &lt;/section>
                 </code></pre>
-                <p>Initial model:</p>
+                <p>In addition you can set an initial data model:</p>
                 <pre><code class="language-markup">
                   {
-                    name: 'Peter'
+                    name: 'Peter',
+                    filename: 'peter',
+                    size: 'large'
                   }
                 </code></pre>
+                <p>Finally you create a new AWC. Have a look into the predefined <a href="https://github.com/REMEXLabs/AWC/tree/master/comps">components</a> on GitHub.</p>
               </div>
             </div>
             <!-- /div.examples -->
 
+          </section>
+          <!-- /section: usage -->
+
+          <!-- section: events -->
+          <section class="section" id="events">
+            <h2 class="sub-header">Events</h2>
+
             <!-- div.events -->
             <div class="events">
               <div class="event">
-                <p>Update the model and style:</p>
-                <pre><code class="language-js" data-js="Components.updateAll({ name: 'Anna' });">
+                <p>The method <strong>Components.updateAll</strong> updates all defined adaptive web components:</p>
+                <pre><code class="language-js" data-js="Components.updateAll({ name: 'Anna', filename: 'anna' });">
                   Components.updateAll({
-                    name: 'Anna'
+                    name: 'Anna',
+                    filename: 'anna'
                   });
                 </code></pre>
                 <button>Update</button>
               </div>
               <div class="event">
-                <pre><code class="language-js" data-js="Components.updateAll({ name: 'Tom', reading_direction: 'rtl' });">
+                <pre><code class="language-js" data-js="Components.updateAll({ name: 'Tom', filename: 'tom', reading_direction: 'rtl', contrast: 'normal', size: 'normal' });">
                   Components.updateAll({
                     name: 'Tom',
-                    reading_direction: 'rtl'
+                    filename: 'tom',
+                    reading_direction: 'rtl',
+                    contrast: 'normal',
+                    size: 'normal'
                   });
                 </code></pre>
                 <button>Update</button>
               </div>
               <div class="event">
-                <pre><code class="language-js" data-js="Components.update('awc-box', { name: 'Carol', contrast: 'invert', reading_direction: 'ltr' });">
-                  Components.update('awc-box', {
-                    name: 'Carol',
-                    contrast: 'invert',
-                    reading_direction: 'ltr'
+                <pre><code class="language-js" data-js="Components.updateAll({ name: 'Carole', filename: 'carole', reading_direction: 'ltr', contrast: 'high', size: 'large' });">
+                  Components.updateAll({
+                    name: 'Carole',
+                    filename: 'carole',
+                    reading_direction: 'ltr',
+                    contrast: 'high',
+                    size: 'large'
                   });
                 </code></pre>
                 <button>Update</button>
               </div>
             </div>
+            <div class="event">
+              <p>Instead the method <strong>Components.update</strong> updates just a specific adaptive web component:</p>
+              <pre><code class="language-js" data-js="Components.update('awc-image', { name: 'Carole', filename: 'carole', reading_direction: 'ltr', contrast: 'high', size: 'large' });">
+                Components.update('awc-image', {
+                  name: 'Carole',
+                  filename: 'carole',
+                  reading_direction: 'ltr',
+                  contrast: 'high',
+                  size: 'large'
+                });
+              </code></pre>
+              <button>Update</button>
+            </div>
             <!-- div.events -->
 
           </section>
-          <!-- /section: usage -->
+          <!-- /section: events -->
 
           <!-- section: downloads -->
           <section class="section section-downloads" id="downloads">
@@ -267,11 +327,11 @@
               <div class="content">
                 <img src="assets/img/anna.png" alt="Anna">
                 <div class="data">
-                  <h3>Anna</h3>
+                  <h3>Anna (17)</h3>
                   <nav>
                     <ul>
                       <li>
-                        <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Anna' });" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Adapt Set</a>
+                        <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Anna', filename: 'anna' });" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Adapt Set</a>
                       </li>
                       <li>
                         <a href="http://personabrowser.gpii.eu/en/Persona/english-anna/" target="_anna" class="btn btn-primary btn-sm"><i class="fa fa-external-link" aria-hidden="true"></i> Open Details</a>
@@ -285,11 +345,11 @@
               <div class="content">
                 <img src="assets/img/tom.png" alt="Tom">
                 <div class="data">
-                  <h3>Tom</h3>
+                  <h3>Tom (27)</h3>
                   <nav>
                     <ul>
                       <li>
-                        <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Tom' });" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Adapt Set</a>
+                        <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Tom', filename: 'tom', reading_direction: 'rtl', contrast: 'normal', size: 'normal' });" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Adapt Set</a>
                       </li>
                       <li>
                         <a href="http://personabrowser.gpii.eu/en/Persona/english-tom/" target="_tom" class="btn btn-primary btn-sm"><i class="fa fa-external-link" aria-hidden="true"></i> Open Details</a>
@@ -301,13 +361,13 @@
             </div>
             <div class="persona col-sm-4 col-xs-4">
               <div class="content">
-                <img src="assets/img/carol.png" alt="Carol">
+                <img src="assets/img/carole.png" alt="Carol">
                 <div class="data">
-                  <h3>Carole</h3>
+                  <h3>Carole (34)</h3>
                   <nav>
                     <ul>
                       <li>
-                        <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Carole' });" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Adapt Set</a>
+                        <a href="javascript:void(0);" onClick="Components.updateAll({ name: 'Carole', filename: 'carole', reading_direction: 'ltr', contrast: 'high', size: 'large' });" class="btn btn-primary btn-sm"><i class="fa fa-user" aria-hidden="true"></i> Adapt Set</a>
                       </li>
                       <li>
                         <a href="http://personabrowser.gpii.eu/en/Persona/english-carole/" target="_carole" class="btn btn-primary btn-sm"><i class="fa fa-external-link" aria-hidden="true"></i> Open Details</a>
