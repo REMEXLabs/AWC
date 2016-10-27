@@ -22,7 +22,7 @@ class Component {
         this.root = this.attachShadow({
           mode: 'open'
         });
-        let link = document.querySelectorAll('[data-tag=' + _htmlTag + ']')[0];
+        let link = document.querySelector('[data-tag=' + _htmlTag + ']');
         this.template = link.import.getElementsByTagName('template')[0];
         this._buildHtml(data);
       }
