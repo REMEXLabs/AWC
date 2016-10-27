@@ -8,7 +8,7 @@ class Component {
    * @param  {object} _data      The initial model of the component.
    */
   constructor(_htmlTag, _baseClass, _data, _options) {
-    Component.testBroswerSupport();
+    Component.testBrowserSupport();
 
     this.setHtmlTag(_htmlTag);
     this.setBaseClass(_baseClass);
@@ -34,7 +34,7 @@ class Component {
         window.adaptiveElements = window.adaptiveElements || Array();
         this.addEventListener('adaptiveUpdate', this._adaptiveChangeCallback, false);
         window.adaptiveElements.push(this);
-        // Atatch callback:
+        // Attach callback:
         this._pipeCallback('onCreate');
       }
 
@@ -42,7 +42,7 @@ class Component {
        * disconnectedCallback - Implementation of the disconnectedCallback.
        */
       disconnectedCallback() {
-        // Atatch callback:
+        // Attach callback:
         this._pipeCallback('onDisconnect');
       };
 
@@ -54,7 +54,7 @@ class Component {
        * @param  {mix} newVal   The new value.
        */
       attributeChangedCallback(attrName, oldVal, newVal) {
-        // Atatch callback:
+        // Attach callback:
         this._pipeCallback('onAttributeChange');
       }
 
@@ -62,7 +62,7 @@ class Component {
        * adoptedCallback - Implementation of the adoptedCallback.
        */
       adoptedCallback() {
-        // Atatch callback:
+        // Attach callback:
         this._pipeCallback('onAdopted');
       }
 
@@ -73,7 +73,7 @@ class Component {
        * @param  {event} e The event object.
        */
       _adaptiveChangeCallback(e) {
-        // Atatch callback:
+        // Attach callback:
         this._pipeCallback('onAdaptiveChange');
         // Update HTML:
         data = this._mergeModels(data, e.detail);
@@ -179,7 +179,7 @@ class Component {
    *
    * @return {boolean}  Does the browser support all features?
    */
-  static testBroswerSupport() {
+  static testBrowserSupport() {
     // Version == 1.0:
     if ('customElements' in window &&
       !!HTMLElement.prototype.attachShadow) {
