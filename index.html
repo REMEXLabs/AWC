@@ -21,6 +21,8 @@
     <link rel="import" data-tag="awc-profile" href="comps/awc-profile.html">
     <link rel="import" data-tag="awc-textbox" href="comps/awc-textbox.html">
     <link rel="import" data-tag="awc-image" href="comps/awc-image.html">
+    <link rel="import" data-tag="awc-input" href="comps/awc-input.html">
+
   </head>
 
   <body data-spy="scroll" data-target="#scrollspy" data-offset="50">
@@ -130,6 +132,18 @@
               <pre><code class="language-markup">&lt;awc-image></code></pre>
               <p class="subline"><strong>Result</strong>:</p>
               <awc-image>
+            </div>
+
+            <div class="element">
+              <h3>Adaptive Input</h3>
+              <p class="subline"><strong>Component awc-input.html</strong></p>
+              <pre><code class="language-markup">&lt;div class="contrast_{{ contrast }} reading_direction_{{ reading_direction }} size_{{ size }}">
+  <p>Hello{{ name }}, please enter your topic:</p>  <input name="topic" type="text">
+  <p>Your question is:</p> <textarea name="question" cols="40" rows="5"></textarea>
+&lt;/div></code></pre>
+              <pre><code class="language-markup">&lt;awc-input></code></pre>
+              <p class="subline"><strong>Result</strong>:</p>
+              <awc-input>
             </div>
 
           </section>
