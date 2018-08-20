@@ -37,6 +37,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
     "gulp-jasmine": "^2.4.0",
+    "gulp-plumber": "^1.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "jasmine-reporters": "^2.2.0"
